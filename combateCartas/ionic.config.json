@@ -1,0 +1,7 @@
+{
+  "name": "combateCartas",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
