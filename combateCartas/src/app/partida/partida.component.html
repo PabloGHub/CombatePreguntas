@@ -3,27 +3,35 @@
 
     <ion-row>
       <ion-col size="6">
-        <ion-button>AAA</ion-button>
-        <ion-button>EEE</ion-button>
-        <br>
-        <ion-button>VVV</ion-button>
-        <ion-button>CCC</ion-button>
+        <h2>Aqui va la pregunta</h2>
       </ion-col>
       <ion-col size="6">
-        <h2>aaaaaaaaaaaaaaaaaaa</h2>
+        <div class="d-flex justify-content-between">
+          <h2 class="d-flex justify-content-start">Tiempo Restante:</h2>
+          <p class="d-flex justify-content-end align-items-end mb-0">{{_tiempo_i}}/30</p>
+        </div>
+        <ion-progress-bar [value]="_tiempo_i / 30"></ion-progress-bar>
       </ion-col>
     </ion-row>
 
     <ion-row>
       <ion-col size="6">
-        <img src="assets/juga.jpg" alt="jugador">
+        <div class="d-flex justify-content-between">
+          <h2 class="d-flex justify-content-start">Vida Restante:</h2>
+          <p class="d-flex justify-content-end align-items-end mb-0">{{_vida_i}}/100</p>
+        </div>
+        <ion-progress-bar [value]="_vida_i / 100"></ion-progress-bar>
       </ion-col>
       <ion-col size="6">
-        <ion-button>AAA</ion-button>
-        <ion-button>EEE</ion-button>
-        <br>
-        <ion-button>VVV</ion-button>
-        <ion-button>CCC</ion-button>
+        <ion-row>
+
+          <ion-button class="btn btn-primaty " (click)=responderPregunta(1)>AAA</ion-button>
+          <ion-button class="btn btn-primaty " (click)=responderPregunta(2)>EEE</ion-button>
+        </ion-row>
+        <ion-row>
+          <ion-button class="btn btn-primaty " (click)=responderPregunta(3)>VVV</ion-button>
+          <ion-button class="btn btn-primaty " (click)=responderPregunta(4)>CCC</ion-button>
+        </ion-row>
       </ion-col>
     </ion-row>
 
