@@ -1,9 +1,10 @@
 <ion-content>
   <ion-grid>
 
+    <!-- ************( Parte de Arriba )************ -->
     <ion-row>
       <ion-col size="6">
-        <h2>Aqui va la pregunta</h2>
+        <h2>{{ _pregunta_s }}</h2>
       </ion-col>
       <ion-col size="6">
         <div class="d-flex justify-content-between">
@@ -14,6 +15,8 @@
       </ion-col>
     </ion-row>
 
+
+    <!-- ************( Parte de Abajo )************ -->
     <ion-row>
       <ion-col size="6">
         <div class="d-flex justify-content-between">
@@ -22,17 +25,28 @@
         </div>
         <ion-progress-bar [value]="_vida_i / 100"></ion-progress-bar>
       </ion-col>
+
+      <!-- Botones Respuesta -->
       <ion-col size="6">
         <ion-row>
-
-          <ion-button class="btn btn-primaty " (click)=responderPregunta(1)>AAA</ion-button>
-          <ion-button class="btn btn-primaty " (click)=responderPregunta(2)>EEE</ion-button>
+          <ion-col size="6">
+            <ion-button class="btn btn-primaty w-100" (click)=responderPregunta(1)>{{ _respuesta1_s }}</ion-button>
+          </ion-col>
+          <ion-col size="6">
+            <ion-button class="btn btn-primaty w-100" (click)=responderPregunta(2)>{{ _respuesta2_s }}</ion-button>
+          </ion-col>
         </ion-row>
+
         <ion-row>
-          <ion-button class="btn btn-primaty " (click)=responderPregunta(3)>VVV</ion-button>
-          <ion-button class="btn btn-primaty " (click)=responderPregunta(4)>CCC</ion-button>
+          <ion-col size="6">
+            <ion-button class="btn btn-primaty w-100" (click)=responderPregunta(3)>{{ _respuesta3_s }}</ion-button>
+          </ion-col>
+          <ion-col size="6">
+            <ion-button class="btn btn-primaty w-100" (click)=responderPregunta(4)>{{ _respuesta4_s }}</ion-button>
+          </ion-col>
         </ion-row>
       </ion-col>
+
     </ion-row>
 
   </ion-grid>

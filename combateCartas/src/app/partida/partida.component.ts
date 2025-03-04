@@ -26,6 +26,13 @@ export class PartidaComponent  implements OnInit
   _tiempo_i: number = 30;
   _vida_i: number = 100;
 
+  _pregunta_s: string = "¿Esto es una pregunta?";
+  _respuesta1_s: string = "Respuesta 1";
+  _respuesta2_s: string = "Respuesta 2";
+  _respuesta3_s: string = "Respuesta 3";
+  _respuesta4_s: string = "Respuesta 4";
+
+
 
   // ****** Funciones ***** //
   responderPregunta(_respuesta_i: number)
