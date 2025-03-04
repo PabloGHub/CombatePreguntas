@@ -19,19 +19,21 @@ export class PartidaComponent  implements OnInit
   constructor() { }
   ngOnInit()
   {
-    console.log("MQM");
+    this.iniciarRelog();
   }
 
   // ****** Declaraciones ***** //
   _tiempo_i: number = 30;
   _vida_i: number = 100;
 
+  // variables de preguntas
   _pregunta_s: string = "¿Esto es una pregunta?";
   _respuesta1_s: string = "Respuesta 1";
   _respuesta2_s: string = "Respuesta 2";
   _respuesta3_s: string = "Respuesta 3";
   _respuesta4_s: string = "Respuesta 4";
 
+  _intervaloID: any;
 
 
   // ****** Funciones ***** //
@@ -40,7 +42,16 @@ export class PartidaComponent  implements OnInit
     console.log("Respuesta: " + _respuesta_i);
   }
 
-
+  iniciarRelog()
+  {
+    this._intervaloID = setInterval(() =>
+    {
+      if (this._tiempo_i > 0)
+        this._tiempo_i--;
+      else
+        clearInterval(this._intervaloID);
+    }, 1000);
+  }
 
   //
   preguntas: any[] =
