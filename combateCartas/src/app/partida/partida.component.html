@@ -4,18 +4,38 @@
 
   <ion-img class="position-fixed bottom-0 w-100" src="assets/fondos/suelo1.png"></ion-img>
 
-  <div class="position-relative">
-    <ion-img class="persona position-absolute top-50 start-50 translate-middle" src="assets/fondos/jugaSilueta.png" ></ion-img>
+  <!--
+  <div class="w-100" style="padding-left: 30%;">
+    <ion-img class="persona position-absolute top-50 start-20" src="assets/fondos/bocadillos1.png" ></ion-img>
+    <p>kjfgosuogsuoghuioshguio</p>
+    <h2>{{ _pregunta_s }}</h2>
+    <ion-img class="persona position-absolute top-50 start-20" src="assets/fondos/entradaBocadillo1.png" ></ion-img>
   </div>
+  -->
+
+  <div class="position-absolute w-50 top-50 start-50 translate-middle">
+    <ion-img class="persona position-absolute top-10" src="assets/fondos/bocadillos1.png" ></ion-img>
+    <h2>{{ _pregunta_s }}</h2>
+    <ion-img class="persona position-absolute " src="assets/fondos/entradaBocadillo1.png" ></ion-img>
+  </div>
+
+  <ion-img class="persona position-absolute top-50 start-50 translate-middle" src="assets/fondos/jugaSilueta.png" ></ion-img>
 
   <div class="position-fixed bottom-0 w-100">
 
-    <ion-grid style="/*margin-top: 15%;*/ max-width: 80%;" class="fondoPanel">
+
+    <ion-grid style="/*margin-top: 15%;*/ max-width: 80%;" class="fondoPanel p-4">
 
       <!-- ************( Parte de Arriba )************ -->
       <ion-row>
         <ion-col size="6">
-          <h2>{{ _pregunta_s }}</h2>
+
+            <div class="d-flex justify-content-between">
+              <h2 class="d-flex justify-content-start">Vida Restante:</h2>
+              <p class="d-flex justify-content-end align-items-end mb-0">{{_vida_i}}/100</p>
+            </div>
+            <ion-progress-bar [value]="_vida_i / 100"></ion-progress-bar>
+
         </ion-col>
         <ion-col size="6">
           <div class="d-flex justify-content-between">
@@ -29,16 +49,8 @@
 
       <!-- ************( Parte de Abajo )************ -->
       <ion-row>
-        <ion-col size="6">
-          <div class="d-flex justify-content-between">
-            <h2 class="d-flex justify-content-start">Vida Restante:</h2>
-            <p class="d-flex justify-content-end align-items-end mb-0">{{_vida_i}}/100</p>
-          </div>
-          <ion-progress-bar [value]="_vida_i / 100"></ion-progress-bar>
-        </ion-col>
-
         <!-- Botones Respuesta -->
-        <ion-col size="6">
+        <ion-col size="12">
           <ion-row>
             <ion-col size="6">
               <ion-button class="btn btn-primaty w-100" (click)=responderPregunta(0)>{{ _respuesta1_s }}</ion-button>
