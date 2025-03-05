@@ -1,5 +1,14 @@
 import {Component, numberAttribute, OnInit} from '@angular/core';
-import {IonBackButton, IonButton, IonCol, IonContent, IonGrid, IonProgressBar, IonRow} from "@ionic/angular/standalone";
+import {
+  IonBackButton,
+  IonButton,
+  IonCol,
+  IonContent, IonFooter,
+  IonGrid,
+  IonImg,
+  IonProgressBar,
+  IonRow
+} from "@ionic/angular/standalone";
 
 @Component({
   selector: 'app-partida',
@@ -11,7 +20,9 @@ import {IonBackButton, IonButton, IonCol, IonContent, IonGrid, IonProgressBar, I
     IonRow,
     IonCol,
     IonButton,
-    IonProgressBar
+    IonProgressBar,
+    IonImg,
+    IonFooter
   ]
 })
 export class PartidaComponent  implements OnInit
@@ -76,18 +87,26 @@ export class PartidaComponent  implements OnInit
     else
     {
       console.log("Respuesta correcta");
-      this.iniciarRonda();
+      this._vida_i += 10
     }
 
     if (this._vida_i <= 0)
     {
       // TODO: Perder partida.
+      this._vida_i = 0;
       console.log("partida perdida");
     }
+
+    if (this._vida_i > 100)
+      this._vida_i = 100;
+
+
+    this.iniciarRonda();
   }
 
   iniciarRelog()
   {
+    this._tiempo_i = 30;
     this._intervaloID = setInterval(() =>
     {
       if (this._tiempo_i > 0)

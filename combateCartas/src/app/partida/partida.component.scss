@@ -1,3 +1,17 @@
+ion-content
+{
+  --background: url('../../assets/fondos/fondoPreguntas.png') no-repeat center center / cover;
+}
+
+.persona
+{
+  min-width: 100px;
+  max-width: 300px;
+
+  min-height: 40px;
+  max-height: 60px;
+}
+
 .btnRespuesta
 {
   min-width: 300px;
