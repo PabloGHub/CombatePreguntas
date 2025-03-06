@@ -31,6 +31,23 @@ ion-content
   margin-left: calc(50% - (var(--cuadrado) / 2));
 }
 
+
+.divBocadillos
+{
+  background-color: #ffede4;
+
+  margin: 0.5rem 2rem 0.5rem 2rem;
+
+  min-height: 80%;
+  border-radius: 2rem;
+
+  *
+  {
+    text-align: center;
+    color: #8c8c8c;
+  }
+}
+
 .filas
 {
   min-height: 30%;
