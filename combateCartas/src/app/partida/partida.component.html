@@ -12,67 +12,89 @@
     <ion-img class="persona position-absolute top-50 start-20" src="assets/fondos/entradaBocadillo1.png" ></ion-img>
   </div>
   -->
+  <!--
+    <div class="position-absolute w-50 top-50 start-50 translate-middle">
+      <ion-img class="persona position-absolute top-10" src="assets/fondos/bocadillos1.png" ></ion-img>
+      <h2>{{ _pregunta_s }}</h2>
+      <ion-img class="persona position-absolute " src="assets/fondos/entradaBocadillo1.png" ></ion-img>
+    </div>
+  -->
 
-  <div class="position-absolute w-50 top-50 start-50 translate-middle">
-    <ion-img class="persona position-absolute top-10" src="assets/fondos/bocadillos1.png" ></ion-img>
-    <h2>{{ _pregunta_s }}</h2>
-    <ion-img class="persona position-absolute " src="assets/fondos/entradaBocadillo1.png" ></ion-img>
-  </div>
-
-  <ion-img class="persona position-absolute top-50 start-50 translate-middle" src="assets/fondos/jugaSilueta.png" ></ion-img>
-
-  <div class="position-fixed bottom-0 w-100">
-
-
-    <ion-grid style="/*margin-top: 15%;*/ max-width: 80%;" class="fondoPanel p-4">
-
-      <!-- ************( Parte de Arriba )************ -->
-      <ion-row>
-        <ion-col size="6">
-
-            <div class="d-flex justify-content-between">
-              <h2 class="d-flex justify-content-start">Vida Restante:</h2>
-              <p class="d-flex justify-content-end align-items-end mb-0">{{_vida_i}}/100</p>
-            </div>
-            <ion-progress-bar [value]="_vida_i / 100"></ion-progress-bar>
-
-        </ion-col>
-        <ion-col size="6">
-          <div class="d-flex justify-content-between">
-            <h2 class="d-flex justify-content-start">Tiempo Restante:</h2>
-            <p class="d-flex justify-content-end align-items-end mb-0">{{_tiempo_i}}/30</p>
-          </div>
-          <ion-progress-bar [value]="_tiempo_i / 30"></ion-progress-bar>
-        </ion-col>
-      </ion-row>
+  <ion-grid style="width: 100%; height: 96%;">
+    <!---------( Bocadillos Pregunta )---------->
+    <ion-row class="filas">
+      <ion-col>
+        <h2>{{ _pregunta_s }}</h2>
+      </ion-col>
+    </ion-row>
 
 
-      <!-- ************( Parte de Abajo )************ -->
-      <ion-row>
-        <!-- Botones Respuesta -->
-        <ion-col size="12">
-          <ion-row>
-            <ion-col size="6">
-              <ion-button class="btn btn-primaty w-100" (click)=responderPregunta(0)>{{ _respuesta1_s }}</ion-button>
-            </ion-col>
-            <ion-col size="6">
-              <ion-button class="btn btn-primaty w-100" (click)=responderPregunta(1)>{{ _respuesta2_s }}</ion-button>
-            </ion-col>
-          </ion-row>
+    <!---------( Presentador )---------->
+    <ion-row class="filas">
+      <ion-col>
+        <ion-img class="persona" src="assets/fondos/jugaSilueta.png" ></ion-img> <!-- position-absolute top-50 start-50 translate-middle -->
+      </ion-col>
+    </ion-row>
 
-          <ion-row>
-            <ion-col size="6">
-              <ion-button class="btn btn-primaty w-100" (click)=responderPregunta(2)>{{ _respuesta3_s }}</ion-button>
-            </ion-col>
-            <ion-col size="6">
-              <ion-button class="btn btn-primaty w-100" (click)=responderPregunta(3)>{{ _respuesta4_s }}</ion-button>
-            </ion-col>
-          </ion-row>
-        </ion-col>
 
-      </ion-row>
+    <!---------( Panel Usuario )---------->
+    <ion-row class="filas">
+      <ion-col>
 
-    </ion-grid>
-  </div>
+        <div > <!-- class="position-fixed bottom-0 w-100" -->
+          <ion-grid style="/*margin-top: 15%;*/ /*max-width: 80%;*/" class="fondoPanel p-4">
+
+            <!-- ************( Parte de Arriba )************ -->
+            <ion-row>
+              <ion-col size="6">
+
+                <div class="d-flex justify-content-between">
+                  <h2 class="d-flex justify-content-start">Vida Restante:</h2>
+                  <p class="d-flex justify-content-end align-items-end mb-0">{{_vida_i}}/100</p>
+                </div>
+                <ion-progress-bar [value]="_vida_i / 100"></ion-progress-bar>
+
+              </ion-col>
+              <ion-col size="6">
+                <div class="d-flex justify-content-between">
+                  <h2 class="d-flex justify-content-start">Tiempo Restante:</h2>
+                  <p class="d-flex justify-content-end align-items-end mb-0">{{_tiempo_i}}/30</p>
+                </div>
+                <ion-progress-bar [value]="_tiempo_i / 30"></ion-progress-bar>
+              </ion-col>
+            </ion-row>
+
+
+            <!-- ************( Parte de Abajo )************ -->
+            <ion-row>
+              <!-- Botones Respuesta -->
+              <ion-col size="12">
+                <ion-row>
+                  <ion-col size="6">
+                    <ion-button class="btn btn-primaty w-100" (click)=responderPregunta(0)>{{ _respuesta1_s }}</ion-button>
+                  </ion-col>
+                  <ion-col size="6">
+                    <ion-button class="btn btn-primaty w-100" (click)=responderPregunta(1)>{{ _respuesta2_s }}</ion-button>
+                  </ion-col>
+                </ion-row>
+
+                <ion-row>
+                  <ion-col size="6">
+                    <ion-button class="btn btn-primaty w-100" (click)=responderPregunta(2)>{{ _respuesta3_s }}</ion-button>
+                  </ion-col>
+                  <ion-col size="6">
+                    <ion-button class="btn btn-primaty w-100" (click)=responderPregunta(3)>{{ _respuesta4_s }}</ion-button>
+                  </ion-col>
+                </ion-row>
+              </ion-col>
+
+            </ion-row>
+
+          </ion-grid>
+        </div>
+
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 
 </ion-content>

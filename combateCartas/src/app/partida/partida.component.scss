@@ -1,3 +1,9 @@
+:root
+{
+
+}
+
+
 ion-content
 {
   --background: url('../../assets/fondos/fondoPreguntas.png') no-repeat center center / cover;
@@ -12,11 +18,23 @@ ion-content
 
 .persona
 {
-  min-width: 100px;
-  max-width: 300px;
+  --cuadrado: 256px; // tamaño de la imagen persona, que es cuadrada.
 
-  min-height: 40px;
-  max-height: 60px;
+  min-width: calc(var(--cuadrado) / 4);
+  max-width: var(--cuadrado);
+
+  // los -30px permite pegar la imagen al borde.
+  min-height: calc((var(--cuadrado) / 4) - 30px);
+  max-height: calc(var(--cuadrado) - 30px);
+
+  // centrar.
+  margin-left: calc(50% - (var(--cuadrado) / 2));
+}
+
+.filas
+{
+  min-height: 30%;
+  max-height: 30%;
 }
 
 .btnRespuesta
