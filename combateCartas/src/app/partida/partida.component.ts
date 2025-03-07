@@ -1,9 +1,8 @@
-import {Component, numberAttribute, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {
-  IonBackButton,
   IonButton,
   IonCol,
-  IonContent, IonFooter,
+  IonContent,
   IonGrid,
   IonImg,
   IonProgressBar,
@@ -22,7 +21,6 @@ import {
     IonButton,
     IonProgressBar,
     IonImg,
-    IonFooter
   ]
 })
 export class PartidaComponent  implements OnInit
@@ -78,16 +76,16 @@ export class PartidaComponent  implements OnInit
 
     if (_respuesta_i == -1)
     {
-      this._vida_i -= 10;
+      this._vida_i -= 20;
     }
     else if (!this._preguntas[this._numPregunta_i].respuestas[_respuesta_i].correcta)
     {
-      this._vida_i -= 20;
+      this._vida_i -= 30;
     }
     else
     {
       console.log("Respuesta correcta");
-      this._vida_i += 10
+      this._vida_i += 15
     }
 
     if (this._vida_i <= 0)
