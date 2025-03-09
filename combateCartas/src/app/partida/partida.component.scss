@@ -23,7 +23,7 @@ ion-content
   min-width: calc(var(--cuadrado) / 4);
   max-width: var(--cuadrado);
 
-  // los -30px permite pegar la imagen al borde.
+  // los -30px permite pegar la imagen al borde, a veces.
   min-height: calc((var(--cuadrado) / 4) - 30px);
   max-height: calc(var(--cuadrado) - 30px);
 

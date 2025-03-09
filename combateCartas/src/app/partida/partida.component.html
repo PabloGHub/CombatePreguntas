@@ -49,6 +49,27 @@
             <!-- ************( Parte de Arriba )************ -->
             <ion-row>
               <ion-col size="6">
+                <div>
+                  <h2>Nombre del usuario</h2>
+                </div>
+                <div>
+                  <h2>Cantidad de preguntas respondidas</h2>
+                </div>
+              </ion-col>
+              <ion-col size="6">
+                <div class="d-flex justify-content-between">
+                  <h2 class="d-flex justify-content-start">Tiempo Restante:</h2>
+                  <p class="d-flex justify-content-end align-items-end mb-0">{{_tiempo_i}}/15</p>
+                </div>
+                <ion-progress-bar [value]="_tiempo_i / 15"></ion-progress-bar>
+              </ion-col>
+            </ion-row>
+
+
+            <!-- ************( Parte de Abajo )************ -->
+            <ion-row>
+
+              <ion-col size="6">
 
                 <div class="d-flex justify-content-between">
                   <h2 class="d-flex justify-content-start">Vida Restante:</h2>
@@ -57,20 +78,9 @@
                 <ion-progress-bar [value]="_vida_i / 100"></ion-progress-bar>
 
               </ion-col>
-              <ion-col size="6">
-                <div class="d-flex justify-content-between">
-                  <h2 class="d-flex justify-content-start">Tiempo Restante:</h2>
-                  <p class="d-flex justify-content-end align-items-end mb-0">{{_tiempo_i}}/30</p>
-                </div>
-                <ion-progress-bar [value]="_tiempo_i / 30"></ion-progress-bar>
-              </ion-col>
-            </ion-row>
 
-
-            <!-- ************( Parte de Abajo )************ -->
-            <ion-row>
               <!-- Botones Respuesta -->
-              <ion-col size="12">
+              <ion-col size="6">
                 <ion-row>
                   <ion-col size="6">
                     <ion-button class="btn btn-primaty w-100" (click)=responderPregunta(0)>{{ _respuesta1_s }}</ion-button>

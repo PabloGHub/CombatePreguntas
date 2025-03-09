@@ -33,7 +33,7 @@ export class PartidaComponent  implements OnInit
 
   // ****** Declaraciones ***** //
   _numPregunta_i: number = 0;
-  _tiempo_i: number = 30;
+  _tiempo_i: number = 15;
   _vida_i: number = 100;
 
   // variables de preguntas
@@ -104,7 +104,7 @@ export class PartidaComponent  implements OnInit
 
   iniciarRelog()
   {
-    this._tiempo_i = 30;
+    this._tiempo_i = 15;
     this._intervaloID = setInterval(() =>
     {
       if (this._tiempo_i > 0)
