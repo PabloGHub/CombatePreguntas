@@ -8,7 +8,6 @@ import {IonButton, IonCol, IonGrid, IonProgressBar, IonRow} from "@ionic/angular
     imports: [
         IonButton,
         IonCol,
-        IonGrid,
         IonProgressBar,
         IonRow
     ]
@@ -21,7 +20,8 @@ export class PreguntaComponent
 
   // ****** Declaraciones ***** //
   //@Input() _numPregunta_i: number = 0;
-  @Input() _tiempo_i: number = 15;
+  @Input() _maxTiempo_i: number = 20;
+  @Input() _tiempo_i: number = 20;
   @Input() _vida_i: number = 100;
   @Input() _nombre_s: string = "";
   @Input() _cantidad_i: number = 0;

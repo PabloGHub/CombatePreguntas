@@ -24,7 +24,7 @@
     <!---------( Bocadillos Pregunta )---------->
     <ion-row class="filas">
       <ion-col>
-        <div class="divBocadillos">
+        <div *ngIf="_bocadilloAparecer_b" class="divBocadillos">
           <h2>{{ _bocadillo_s }}</h2>
         </div>
       </ion-col>
@@ -50,7 +50,7 @@
       <ion-col>
 
         <div> <!-- class="position-fixed bottom-0 w-100" -->
-          <ion-grid style="/*margin-top: 15%;*/ /*max-width: 80%;*/" class="fondoPanel p-4 w-80">
+          <ion-grid style="/*margin-top: 15%;*/ /*max-width: 80%;*/" class="fondoPanel p-2 w-100">
 
             <app-nombre *ngIf="_estadoPartida === _MaquinaEstados.NOMBRE"
               (_empezar)="iniciarRonda()"
@@ -60,6 +60,8 @@
                           [_nombre_s]="'Ninguno'"
                           [_cantidad_i]="-1"
                           [_tiempo_i]="_tiempo_i"
+                          [_maxTiempo_i]="_maxTiempo_i"
+                          [_vida_i]="_vida_i"
                           [_pregunta_s]="_pregunta_s"
                           [_respuesta1_s]="_respuesta1_s"
                           [_respuesta2_s]="_respuesta2_s"
@@ -71,6 +73,8 @@
                               [_nombre_s]="'Ninguno'"
                               [_cantidad_i]="-1"
                               [_vida_i]="_vida_i"
+                              [_acertado_b]="_acertado_b"
+                              (_continuar)="iniciarRonda()"
             ></app-comprobacion>
             <app-nueva-pregunta *ngIf="_estadoPartida === _MaquinaEstados.NUEVA"></app-nueva-pregunta>
 

@@ -9,8 +9,6 @@ import {FormsModule} from "@angular/forms";
   imports: [
     IonRow,
     IonCol,
-    IonItem,
-    IonLabel,
     IonInput,
     IonButton,
     FormsModule
@@ -26,6 +24,8 @@ export class NombreComponent
 
   empezar()
   {
+    if (this._nombre == "" || this._nombre == null || this._nombre.trim().length === 0)
+      return;
     // TODO: guardar nombre y devolver id.
 
     this._empezar.emit();

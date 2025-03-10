@@ -53,12 +53,13 @@ export class PartidaComponent  implements OnInit
   _Jugador_i: number = 0;
   _bocadillo_s: string = "";
   _numPregunta_i: number = 0;
-  _tiempo_i: number = 15;
+  _maxTiempo_i: number = 20;
+  _tiempo_i: number = 20;
   _vida_i: number = 100;
   _estadoPartida: _MaquinaEstados = _MaquinaEstados.NOMBRE;
   _MaquinaEstados = _MaquinaEstados;
   _acertado_b: boolean = false;
-
+  _bocadilloAparecer_b: boolean = false;
 
   // variables de preguntas
   _pregunta_s: string = "¿Esto es una pregunta?";
@@ -71,12 +72,22 @@ export class PartidaComponent  implements OnInit
   // variables de intervalo
   _intervaloID: any;
   _intervaloBucle: any;
+  _intervaloLetras: any;
 
 
 
   // ****** Funciones ***** //
   iniciarRonda()
   {
+    if (this._vida_i <= 0)
+    {
+      this._vida_i = 0;
+      this._estadoPartida = _MaquinaEstados.NUEVA;
+      console.log("partida perdida");
+      return;
+    }
+
+
     this._estadoPartida = _MaquinaEstados.RESPONDIENDO;
 
     this._numPregunta_i = this.generarRandom(0, this._preguntas.length);
@@ -88,6 +99,7 @@ export class PartidaComponent  implements OnInit
     this._respuesta2_s = this._preguntas[this._numPregunta_i].respuestas[2].respuesta;
     this._respuesta2_s = this._preguntas[this._numPregunta_i].respuestas[3].respuesta;
 
+    this.escribirBocadillo(`¿${this._pregunta_s}?`);
     this.iniciarRelog();
   }
 
@@ -103,19 +115,25 @@ export class PartidaComponent  implements OnInit
   {
       if (this._estadoPartida == _MaquinaEstados.NOMBRE)
       {
-        this._bocadillo_s = "Introduce tu nombre que los demás jugadores van a ver";
+        this._bocadilloAparecer_b = false;
       }
       else if (this._estadoPartida == _MaquinaEstados.RESPONDIENDO)
       {
-        this._bocadillo_s = this._pregunta_s;
+        this._bocadilloAparecer_b = true;
+        //this._bocadillo_s = this._pregunta_s;
       }
       else if (this._estadoPartida == _MaquinaEstados.COMPROBANDO)
       {
-        this._bocadillo_s = "La respuesta es: ";
+        this._bocadilloAparecer_b = false;
       }
       else if (this._estadoPartida == _MaquinaEstados.NUEVA)
       {
+        this._bocadilloAparecer_b = true;
+      }
 
+      if (this._vida_i <= 0)
+      {
+        this._vida_i = 0;
       }
   }
 
@@ -137,24 +155,28 @@ export class PartidaComponent  implements OnInit
     else
     {
       console.log("Respuesta correcta");
-      this._vida_i += 15
+      this._vida_i += 25
       this._acertado_b = true;
-    }
-
-    if (this._vida_i <= 0)
-    {
-      // TODO: Perder partida.
-      this._vida_i = 0;
-      console.log("partida perdida");
     }
 
     if (this._vida_i > 100)
       this._vida_i = 100;
   }
 
+  escribirBocadillo(_texto_s: string)
+  {
+    this._intervaloLetras = setInterval(() =>
+    {
+      if (this._bocadillo_s.length < _texto_s.length)
+        this._bocadillo_s += _texto_s[this._bocadillo_s.length];
+      else
+        clearInterval(this._intervaloLetras);
+    }, 60);
+  }
+
   iniciarRelog()
   {
-    this._tiempo_i = 15;
+    this._tiempo_i = 20;
     this._intervaloID = setInterval(() =>
     {
       if (this._tiempo_i > 0)
@@ -177,7 +199,7 @@ export class PartidaComponent  implements OnInit
   _preguntas: any[] =
   [
     {
-      pregunta: "Pregunta 1",
+      pregunta: "Pregunta 1 Pregunta 1 Pregunta 1 Pregunta 1",
       respuestas:
       [
         {respuesta: "Respuesta 1", correcta: false},
@@ -187,7 +209,7 @@ export class PartidaComponent  implements OnInit
       ]
     },
     {
-      pregunta: "Pregunta 2",
+      pregunta: "Pregunta 2 Pregunta 2 Pregunta 2 Pregunta 2",
       respuestas:
       [
         {respuesta: "Respuesta 1", correcta: true},
@@ -197,7 +219,7 @@ export class PartidaComponent  implements OnInit
       ]
     },
     {
-      pregunta: "Pregunta 3",
+      pregunta: "Pregunta 3 Pregunta 3 Pregunta 3 Pregunta 3",
       respuestas:
       [
         {respuesta: "Respuesta 1", correcta: true},
@@ -207,7 +229,7 @@ export class PartidaComponent  implements OnInit
       ]
     },
     {
-      pregunta: "Pregunta 4",
+      pregunta: "Pregunta 4 Pregunta 4 Pregunta 4 Pregunta 4",
       respuestas:
       [
         {respuesta: "Respuesta 1", correcta: true},

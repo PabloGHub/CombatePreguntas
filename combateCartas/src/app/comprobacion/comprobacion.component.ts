@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {IonButton, IonCol, IonInput, IonProgressBar, IonRow} from "@ionic/angular/standalone";
 
 @Component({
@@ -9,8 +9,7 @@ import {IonButton, IonCol, IonInput, IonProgressBar, IonRow} from "@ionic/angula
     IonButton,
     IonCol,
     IonProgressBar,
-    IonRow,
-    IonInput
+    IonRow
   ]
 })
 export class ComprobacionComponent implements OnInit
@@ -20,11 +19,13 @@ export class ComprobacionComponent implements OnInit
   {
     if (this._acertado_b)
     {
-      // TODO: css para aprobar
+      this._css_s = "text-success";
+      this._mensaje_s = "¡Correcto!";
     }
     else
     {
-      // TODO: css para suspender
+      this._css_s = "text-danger";
+      this._mensaje_s = "¡Incorrecto!";
     }
   }
 
@@ -35,11 +36,15 @@ export class ComprobacionComponent implements OnInit
   @Input() _cantidad_i: number = 0;
   @Input() _acertado_b: boolean = false;
 
+  _css_s: string = "";
+  _mensaje_s: string = "";
+
+  @Output() _continuar = new EventEmitter<void>();
 
   // ****** Metodos ***** //
   continuar()
   {
-
+    this._continuar.emit();
   }
 
 }
