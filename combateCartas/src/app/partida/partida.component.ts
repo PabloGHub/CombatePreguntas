@@ -1,13 +1,25 @@
 import {Component, OnInit} from '@angular/core';
+import {NgIf} from "@angular/common";
 import {
-  IonButton,
   IonCol,
   IonContent,
   IonGrid,
   IonImg,
-  IonProgressBar,
   IonRow
 } from "@ionic/angular/standalone";
+import {PreguntaComponent} from "../pregunta/pregunta.component";
+import {ComprobacionComponent} from "../comprobacion/comprobacion.component";
+import {NombreComponent} from "../nombre/nombre.component";
+import {NuevaPreguntaComponent} from "../nueva-pregunta/nueva-pregunta.component";
+
+// Estados Posibles.
+enum _MaquinaEstados
+{
+  NOMBRE = 0,
+  RESPONDIENDO = 1,
+  COMPROBANDO = 2,
+  NUEVA = 3
+}
 
 @Component({
   selector: 'app-partida',
@@ -18,23 +30,29 @@ import {
     IonGrid,
     IonRow,
     IonCol,
-    IonButton,
-    IonProgressBar,
     IonImg,
-  ]
+    NgIf,
+    PreguntaComponent,
+    ComprobacionComponent,
+    NombreComponent,
+    NuevaPreguntaComponent
+  ],
+  standalone: true
 })
 export class PartidaComponent  implements OnInit
 {
   constructor() { }
   ngOnInit()
   {
-    this.iniciarRonda();
+    console.log("Iniciando Partida");
   }
 
   // ****** Declaraciones ***** //
   _numPregunta_i: number = 0;
   _tiempo_i: number = 15;
   _vida_i: number = 100;
+  _estadoPartida: _MaquinaEstados = _MaquinaEstados.NOMBRE;
+  _MaquinaEstados = _MaquinaEstados;
 
   // variables de preguntas
   _pregunta_s: string = "¿Esto es una pregunta?";
