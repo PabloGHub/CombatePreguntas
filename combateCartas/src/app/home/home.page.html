@@ -1,20 +1,113 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <div style="/*background: var(--color2);*/ height: 100vh;">
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+    <div class="d-flex ion-justify-content-center">
+      <h1>Supervivencia de Preguntas</h1>
+    </div>
+
+    <ion-img class="position-fixed bottom-0 w-100" src="assets/fondos/suelo1.png"></ion-img>
+
+    <ion-grid>
+
+      <ion-row class="d-flex ion-justify-content-center">
+        <ion-col size="6">
+          <br>
+          <ion-button class="w-100 text-white m-1 p-1 h1"><b>Empezar Juego</b></ion-button>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+
+        <!-- Izquierda -->
+        <ion-col size="3" class="d-flex justify-content-center">
+          <div class="fondoPanel mx-3 p-3">
+            <p class="h3">
+              Tutorial:
+            </p>
+
+            <ul>
+
+              <li>
+                Bucle:
+                <ul>
+                  <li>Una vez registres tu nombre</li>
+                  <li>Se te hará una pregunta con 4 respuestas</li>
+                  <li>Tienes 20segundos para responder</li>
+                  <li>Al responde se te dirá si acertaste</li>
+                </ul>
+              </li>
+
+              <br>
+
+              <li>
+                Salud/Vida:
+                <ul>
+                  <li>Al fallar -30</li>
+                  <li>Quedarte sin tiempo -20</li>
+                  <li>Acertar +25</li>
+                  <li>Al quedarte sin vida perderás</li>
+                </ul>
+              </li>
+
+            </ul>
+
+          </div>
+        </ion-col>
+
+        <!-- Centro -->
+        <ion-col size="6" class="d-flex justify-content-center">
+          <h2>Usuarios Que Participaron:</h2>
+          <hr>
+
+        </ion-col>
+
+        <!-- Derecha -->
+        <ion-col size="3" class="d-flex justify-content-center">
+          <div class="fondoPanel mx-3 p-3">
+            <p class="h3">
+              La Chicha del Juego:
+            </p>
+
+            <ul>
+
+              <li>
+                Preguntas:
+                <ul>
+                  <li>Cada pregunta esta hecha por un alumno de este mismo colegio</li>
+                  <li>Se dirá junto con la pregunta el alumno que la a creado</li>
+                  <li>Cuando termines de perder la vida podrás crear tu pregunta</li>
+                </ul>
+              </li>
+
+              <br>
+
+              <li>
+                jugadores:
+                <ul>
+                  <li>Se guarda cuantas preguntas respondiste correctamente</li>
+                  <li>Aquí mismo se muestran así que ten cuidado</li>
+                </ul>
+              </li>
+
+            </ul>
+
+          </div>
+        </ion-col>
+
+      </ion-row>
+    </ion-grid>
   </div>
 </ion-content>
+
+
+<style>
+  h1
+  {
+    font-size: 100px;
+  }
+  ion-content
+  {
+    --background: url('../../assets/fondos/fondoPreguntas.png') no-repeat center center / cover;
+  }
+
+</style>
