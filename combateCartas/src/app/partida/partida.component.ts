@@ -57,6 +57,8 @@ export class PartidaComponent  implements OnInit
   _vida_i: number = 100;
   _estadoPartida: _MaquinaEstados = _MaquinaEstados.NOMBRE;
   _MaquinaEstados = _MaquinaEstados;
+  _acertado_b: boolean = false;
+
 
   // variables de preguntas
   _pregunta_s: string = "¿Esto es una pregunta?";
@@ -65,9 +67,11 @@ export class PartidaComponent  implements OnInit
   _respuesta3_s: string = "Respuesta 3";
   _respuesta4_s: string = "Respuesta 4";
 
+
   // variables de intervalo
   _intervaloID: any;
   _intervaloBucle: any;
+
 
 
   // ****** Funciones ***** //
@@ -103,11 +107,11 @@ export class PartidaComponent  implements OnInit
       }
       else if (this._estadoPartida == _MaquinaEstados.RESPONDIENDO)
       {
-
+        this._bocadillo_s = this._pregunta_s;
       }
       else if (this._estadoPartida == _MaquinaEstados.COMPROBANDO)
       {
-
+        this._bocadillo_s = "La respuesta es: ";
       }
       else if (this._estadoPartida == _MaquinaEstados.NUEVA)
       {
@@ -123,15 +127,18 @@ export class PartidaComponent  implements OnInit
     if (_respuesta_i == -1)
     {
       this._vida_i -= 20;
+      this._acertado_b = false;
     }
     else if (!this._preguntas[this._numPregunta_i].respuestas[_respuesta_i].correcta)
     {
       this._vida_i -= 30;
+      this._acertado_b = false;
     }
     else
     {
       console.log("Respuesta correcta");
       this._vida_i += 15
+      this._acertado_b = true;
     }
 
     if (this._vida_i <= 0)
@@ -143,11 +150,6 @@ export class PartidaComponent  implements OnInit
 
     if (this._vida_i > 100)
       this._vida_i = 100;
-  }
-
-  guardarJugador(_id:number)
-  {
-    this._Jugador_i = _id;
   }
 
   iniciarRelog()

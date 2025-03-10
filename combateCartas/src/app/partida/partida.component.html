@@ -54,10 +54,24 @@
 
             <app-nombre *ngIf="_estadoPartida === _MaquinaEstados.NOMBRE"
               (_empezar)="iniciarRonda()"
-              (_id_i)="guardarJugador(_id_i)"
+              (_id_i)="_Jugador_i = $event"
             ></app-nombre>
-            <app-pregunta *ngIf="_estadoPartida === _MaquinaEstados.RESPONDIENDO"></app-pregunta>
-            <app-comprobacion *ngIf="_estadoPartida === _MaquinaEstados.COMPROBANDO"></app-comprobacion>
+            <app-pregunta *ngIf="_estadoPartida === _MaquinaEstados.RESPONDIENDO"
+                          [_nombre_s]="'Ninguno'"
+                          [_cantidad_i]="-1"
+                          [_tiempo_i]="_tiempo_i"
+                          [_pregunta_s]="_pregunta_s"
+                          [_respuesta1_s]="_respuesta1_s"
+                          [_respuesta2_s]="_respuesta2_s"
+                          [_respuesta3_s]="_respuesta3_s"
+                          [_respuesta4_s]="_respuesta4_s"
+                          (_respuesta_i)="responderPregunta($event)"
+            ></app-pregunta>
+            <app-comprobacion *ngIf="_estadoPartida === _MaquinaEstados.COMPROBANDO"
+                              [_nombre_s]="'Ninguno'"
+                              [_cantidad_i]="-1"
+                              [_vida_i]="_vida_i"
+            ></app-comprobacion>
             <app-nueva-pregunta *ngIf="_estadoPartida === _MaquinaEstados.NUEVA"></app-nueva-pregunta>
 
           </ion-grid>

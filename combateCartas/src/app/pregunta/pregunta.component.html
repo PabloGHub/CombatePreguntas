@@ -1,21 +1,24 @@
 
 <!-- ************( Parte de Arriba )************ -->
 <ion-row>
+
   <ion-col size="6">
     <div>
-      <h2>Nombre del usuario</h2>
+      <h2>{{ _nombre_s }}</h2>
     </div>
     <div>
-      <h2>Cantidad de preguntas respondidas</h2>
+      <h2>Preguntas respondidas correctamente: {{ _cantidad_i }}</h2>
     </div>
   </ion-col>
+
   <ion-col size="6">
     <div class="d-flex justify-content-between">
-      <h2 class="d-flex justify-content-start">Tiempo Restante:</h2>
-      <p class="d-flex justify-content-end align-items-end mb-0">{{_tiempo_i}}/15</p>
+      <h2 class="d-flex justify-content-start">Vida Restante:</h2>
+      <p class="d-flex justify-content-end align-items-end mb-0">{{_vida_i}}/100</p>
     </div>
-    <ion-progress-bar [value]="_tiempo_i / 15"></ion-progress-bar>
+    <ion-progress-bar [value]="_vida_i / 100"></ion-progress-bar>
   </ion-col>
+
 </ion-row>
 
 
@@ -23,13 +26,11 @@
 <ion-row>
 
   <ion-col size="6">
-
     <div class="d-flex justify-content-between">
-      <h2 class="d-flex justify-content-start">Vida Restante:</h2>
-      <p class="d-flex justify-content-end align-items-end mb-0">{{_vida_i}}/100</p>
+      <h2 class="d-flex justify-content-start">Tiempo Restante:</h2>
+      <p class="d-flex justify-content-end align-items-end mb-0">{{_tiempo_i}}/15</p>
     </div>
-    <ion-progress-bar [value]="_vida_i / 100"></ion-progress-bar>
-
+    <ion-progress-bar [value]="_tiempo_i / 15"></ion-progress-bar>
   </ion-col>
 
   <!-- Botones Respuesta -->

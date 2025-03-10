@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {IonButton, IonCol, IonGrid, IonProgressBar, IonRow} from "@ionic/angular/standalone";
 
 @Component({
@@ -20,9 +20,11 @@ export class PreguntaComponent
 
 
   // ****** Declaraciones ***** //
-  @Input() _numPregunta_i: number = 0;
+  //@Input() _numPregunta_i: number = 0;
   @Input() _tiempo_i: number = 15;
   @Input() _vida_i: number = 100;
+  @Input() _nombre_s: string = "";
+  @Input() _cantidad_i: number = 0;
 
   // variables de preguntas
   @Input() _pregunta_s: string = "¿Esto es una pregunta?";
@@ -31,10 +33,14 @@ export class PreguntaComponent
   @Input() _respuesta3_s: string = "Respuesta 3";
   @Input() _respuesta4_s: string = "Respuesta 4";
 
+  // Variables de retorno
+  @Output() _respuesta_i = new EventEmitter<number>();
+
 
   // ****** Metodos ***** //
   responderPregunta(_respuesta_i: number)
   {
     console.log("Respuesta: " + _respuesta_i);
+    this._respuesta_i.emit(_respuesta_i);
   }
 }

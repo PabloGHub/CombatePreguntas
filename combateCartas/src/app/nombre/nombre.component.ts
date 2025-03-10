@@ -29,6 +29,6 @@ export class NombreComponent
     // TODO: guardar nombre y devolver id.
 
     this._empezar.emit();
-    this._id_i.emit();
+    this._id_i.emit(1);
   }
 }
