@@ -20,7 +20,7 @@
     </div>
   -->
 
-  <ion-grid style="width: 100%; height: 96%;">
+  <ion-grid style="width: 100%; height: 100%;">
     <!---------( Bocadillos Pregunta )---------->
     <ion-row class="filas">
       <ion-col>
@@ -34,7 +34,7 @@
     <!---------( Presentador )---------->
     <ion-row class="filas">
       <ion-col>
-        <ion-img class="persona" src="assets/fondos/jugaSilueta.png"></ion-img> <!-- position-absolute top-50 start-50 translate-middle -->
+        <ion-img class="persona" src="assets/fondos/SiluetaGnomo.png"></ion-img> <!-- position-absolute top-50 start-50 translate-middle -->
       </ion-col>
     </ion-row>
 
@@ -49,14 +49,16 @@
     <ion-row class="filas">
       <ion-col>
 
-        <div> <!-- class="position-fixed bottom-0 w-100" -->
-          <ion-grid style="/*margin-top: 15%;*/ /*max-width: 80%;*/" class="fondoPanel p-2 w-100">
+        <div class="h-100"> <!-- class="position-fixed bottom-0 w-100" -->
+          <ion-grid style="/*margin-top: 15%;*/ /*max-width: 80%;*/" class="fondoPanel p-2 w-100 h-100 align-items-center">
 
             <app-nombre *ngIf="_estadoPartida === _MaquinaEstados.NOMBRE"
-              (_empezar)="iniciarRonda()"
-              (_id_i)="_Jugador_i = $event"
+                          class="h-100"
+                          (_empezar)="iniciarRonda()"
+                          (_id_i)="_Jugador_i = $event"
             ></app-nombre>
             <app-pregunta *ngIf="_estadoPartida === _MaquinaEstados.RESPONDIENDO"
+                          class="align-items-center"
                           [_nombre_s]="'Ninguno'"
                           [_cantidad_i]="-1"
                           [_tiempo_i]="_tiempo_i"
@@ -70,9 +72,11 @@
                           (_respuesta_i)="responderPregunta($event)"
             ></app-pregunta>
             <app-comprobacion *ngIf="_estadoPartida === _MaquinaEstados.COMPROBANDO"
+                              class="align-items-center"
                               [_nombre_s]="'Ninguno'"
                               [_cantidad_i]="-1"
                               [_vida_i]="_vida_i"
+                              [_tiempo_i]="_tiempo_i"
                               [_acertado_b]="_acertado_b"
                               (_continuar)="iniciarRonda()"
             ></app-comprobacion>

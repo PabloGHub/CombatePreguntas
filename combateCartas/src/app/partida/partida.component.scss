@@ -17,9 +17,9 @@ ion-content
   min-width: calc(var(--cuadrado) / 4);
   max-width: var(--cuadrado);
 
-  // los -30px permite pegar la imagen al borde, a veces.
-  min-height: calc((var(--cuadrado) / 4) - 30px);
-  max-height: calc(var(--cuadrado) - 30px);
+
+  min-height: calc((var(--cuadrado) / 4));
+  max-height: calc(var(--cuadrado));
 
   // centrar.
   margin-left: calc(50% - (var(--cuadrado) / 2));
@@ -55,26 +55,4 @@ ion-content
   max-width: 300px;
   min-height: 40px;
   max-height: 60px;
-}
-
-
-// Boostrap no da
-.w-60
-{
-   width: 60%;
-}
-
-.w-70
-{
-  width: 70%;
-}
-
-.w-80
-{
-   width: 80%;
-}
-
-.w-90
-{
-   width: 90%;
 }

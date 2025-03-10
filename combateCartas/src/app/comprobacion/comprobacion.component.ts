@@ -17,7 +17,12 @@ export class ComprobacionComponent implements OnInit
   constructor() { }
   ngOnInit()
   {
-    if (this._acertado_b)
+    if (this._tiempo_i <= 0 && !this._acertado_b)
+    {
+      this._css_s = "text-danger";
+      this._mensaje_s = "¡Se acabó el tiempo!";
+    }
+    else if (this._acertado_b)
     {
       this._css_s = "text-success";
       this._mensaje_s = "¡Correcto!";
@@ -32,6 +37,7 @@ export class ComprobacionComponent implements OnInit
 
   // ****** Declaraciones ***** //
   @Input() _vida_i: number = 100;
+  @Input() _tiempo_i: number = 20;
   @Input() _nombre_s: string = "";
   @Input() _cantidad_i: number = 0;
   @Input() _acertado_b: boolean = false;
