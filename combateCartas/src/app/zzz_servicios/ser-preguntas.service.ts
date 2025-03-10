@@ -3,6 +3,7 @@ import {HttpClient} from "@angular/common/http";
 import {DTOpreguntaIndividual} from "../zzz_dtos/pregunta/DTOpreguntaIndividual";
 import {catchError, Observable, throwError} from "rxjs";
 import {DTOcrearPregunta} from "../zzz_dtos/DTOcrearPregunta";
+import {environment} from "../../environments/environment";
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +14,7 @@ export class SerPreguntasService
 
   preguntaAleatoria(_idJugador_i: number): Observable<DTOpreguntaIndividual>
   {
-    return this._http.get<DTOpreguntaIndividual>(`http://sui.casacam.net:8080/pre/aleatoria?_idJugador=${_idJugador_i}`)
+    return this._http.get<DTOpreguntaIndividual>(`${environment.apiUrl}/pre/aleatoria?_idJugador=${_idJugador_i}`)
       .pipe
       (
         catchError(error =>
@@ -26,7 +27,7 @@ export class SerPreguntasService
 
   crearPregunta(_pregunta: DTOcrearPregunta): void
   {
-    this._http.post(`http://sui.casacam.net:8080/pre/crear`, null)
+    this._http.post(`${environment.apiUrl}/pre/crear`, null)
       .pipe
       (
         catchError(error =>

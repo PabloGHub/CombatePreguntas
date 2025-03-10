@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {DTOresponder} from "../zzz_dtos/DTOresponder";
 import {catchError, throwError} from "rxjs";
+import {environment} from "../../environments/environment";
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +13,7 @@ export class SerResponderService
 
   responder(_respuesta: DTOresponder)
   {
-    this._http.post(`http://sui.casacam.net:8080/responder`, _respuesta)
+    this._http.post(`${environment.apiUrl}/responder`, _respuesta)
       .pipe
       (
         catchError(error =>
