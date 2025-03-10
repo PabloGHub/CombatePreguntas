@@ -59,6 +59,11 @@
           <h2>Usuarios Que Participaron:</h2>
           <hr>
 
+          <app-usuario *ngFor="let usuario of _jugadores?.jugadores"
+                       [_nombre_s]="usuario.nombre"
+                       [_cantidad_i]="usuario.respuestasCorrectas"
+          ></app-usuario>
+
         </ion-col>
 
         <!-- Derecha -->
