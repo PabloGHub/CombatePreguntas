@@ -53,4 +53,6 @@ export class ComprobacionComponent implements OnInit
     this._continuar.emit();
   }
 
+
+
 }

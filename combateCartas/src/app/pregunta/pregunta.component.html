@@ -25,7 +25,7 @@
       <h3 class="d-flex justify-content-start">Tiempo Restante:</h3>
       <p class="d-flex justify-content-end align-items-end mb-0">{{_tiempo_i}}/{{_maxTiempo_i}}</p>
     </div>
-    <ion-progress-bar [value]="_tiempo_i / _maxTiempo_i"></ion-progress-bar>
+    <ion-progress-bar [value]="_tiempo_i / _maxTiempo_i" [class]="barraTiempo"></ion-progress-bar>
   </ion-col>
 
   <!-- Botones Respuesta -->

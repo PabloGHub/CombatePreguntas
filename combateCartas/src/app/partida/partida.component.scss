@@ -56,3 +56,12 @@ ion-content
   min-height: 40px;
   max-height: 60px;
 }
+
+.pilar
+{
+  max-height: 45%;
+  max-width: 90%;
+
+  left: 50%;
+  transform: translateX(-50%);
+}

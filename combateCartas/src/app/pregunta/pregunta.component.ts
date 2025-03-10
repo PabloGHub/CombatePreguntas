@@ -43,4 +43,17 @@ export class PreguntaComponent
     console.log("Respuesta: " + _respuesta_i);
     this._respuesta_i.emit(_respuesta_i);
   }
+
+  get barraTiempo()
+  {
+    if (this._tiempo_i <= this._maxTiempo_i * 0.25)
+      return 'barraProgreso final';
+
+    else if (this._tiempo_i <= this._maxTiempo_i * 0.6)
+      return 'barraProgreso medio';
+
+    else
+      return 'barraProgreso';
+  }
+
 }

@@ -55,6 +55,22 @@
   background: var(--color2);
 }
 
+// Barras de Progreso
+.barraProgreso
+{
+  --progress-background: lightgreen;
+  --transition: background-color 0.5s ease;
+}
+
+.barraProgreso.medio
+{
+  --progress-background: lightyellow;
+}
+
+.barraProgreso.final
+{
+  --progress-background: lightcoral;
+}
 
 
 

@@ -99,6 +99,7 @@ export class PartidaComponent  implements OnInit
     this._respuesta2_s = this._preguntas[this._numPregunta_i].respuestas[2].respuesta;
     this._respuesta2_s = this._preguntas[this._numPregunta_i].respuestas[3].respuesta;
 
+    this._bocadillo_s = "";
     this.escribirBocadillo(`¿${this._pregunta_s}?`);
     this.iniciarRelog();
   }
@@ -170,7 +171,9 @@ export class PartidaComponent  implements OnInit
       if (this._bocadillo_s.length < _texto_s.length)
         this._bocadillo_s += _texto_s[this._bocadillo_s.length];
       else
+      {
         clearInterval(this._intervaloLetras);
+      }
     }, 60);
   }
 
@@ -192,7 +195,7 @@ export class PartidaComponent  implements OnInit
     this._intervaloBucle = setInterval(() =>
     {
       this.Update();
-    }, 500); // medio segundo.
+    }, 33); // 30 fps
   }
 
   //
@@ -222,8 +225,8 @@ export class PartidaComponent  implements OnInit
       pregunta: "Pregunta 3 Pregunta 3 Pregunta 3 Pregunta 3",
       respuestas:
       [
-        {respuesta: "Respuesta 1", correcta: true},
-        {respuesta: "Respuesta 2", correcta: false},
+        {respuesta: "Respuesta 1", correcta: false},
+        {respuesta: "Respuesta 2", correcta: true},
         {respuesta: "Respuesta 3", correcta: false},
         {respuesta: "Respuesta 4", correcta: false}
       ]
@@ -232,10 +235,10 @@ export class PartidaComponent  implements OnInit
       pregunta: "Pregunta 4 Pregunta 4 Pregunta 4 Pregunta 4",
       respuestas:
       [
-        {respuesta: "Respuesta 1", correcta: true},
+        {respuesta: "Respuesta 1", correcta: false},
         {respuesta: "Respuesta 2", correcta: false},
         {respuesta: "Respuesta 3", correcta: false},
-        {respuesta: "Respuesta 4", correcta: false}
+        {respuesta: "Respuesta 4", correcta: true}
       ]
     }
   ]
