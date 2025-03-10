@@ -1,9 +1,38 @@
 import { Injectable } from '@angular/core';
+import {HttpClient} from "@angular/common/http";
+import {DTOlistarJugadores} from "../zzz_dtos/listar_jugadores/DTOlistarJugadores";
+import {catchError, Observable, throwError} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
 })
-export class SerJugadorService {
+export class SerJugadorService
+{
+  constructor(private _http: HttpClient) { }
 
-  constructor() { }
+  crearJugador(_nombre_s: string)
+  {
+    this._http.post<string>(`http://sui.casacam.net:8080/juga/crear?_nombre=${_nombre_s}`, null)
+      .pipe
+      (
+        catchError(error =>
+        {
+          console.error('Web:(Servicios:crearJugador):', error);
+          return throwError(() => new Error('Error en crearJugador'));
+        })
+      );
+  }
+
+  listarJugadores(): Observable<DTOlistarJugadores>
+  {
+    return this._http.get<DTOlistarJugadores>(`http://sui.casacam.net:8080/juga/listar`)
+      .pipe
+      (
+        catchError(error =>
+        {
+          console.error('Web:(Servicios:listarJugadores):', error);
+          return throwError(() => new Error('Error en listarJugadores'));
+        })
+      );
+  }
 }
