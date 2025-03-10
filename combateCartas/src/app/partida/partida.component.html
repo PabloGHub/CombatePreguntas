@@ -25,7 +25,7 @@
     <ion-row class="filas">
       <ion-col>
         <div class="divBocadillos">
-          <h2>{{ _pregunta_s }}</h2>
+          <h2>{{ _bocadillo_s }}</h2>
         </div>
       </ion-col>
     </ion-row>
@@ -49,10 +49,19 @@
     <ion-row class="filas">
       <ion-col>
 
-        <app-nombre *ngIf="_estadoPartida === _MaquinaEstados.NOMBRE"></app-nombre>
-        <app-pregunta *ngIf="_estadoPartida === _MaquinaEstados.RESPONDIENDO"></app-pregunta>
-        <app-comprobacion *ngIf="_estadoPartida === _MaquinaEstados.COMPROBANDO"></app-comprobacion>
-        <app-nueva-pregunta *ngIf="_estadoPartida === _MaquinaEstados.NUEVA"></app-nueva-pregunta>
+        <div> <!-- class="position-fixed bottom-0 w-100" -->
+          <ion-grid style="/*margin-top: 15%;*/ /*max-width: 80%;*/" class="fondoPanel p-4 w-80">
+
+            <app-nombre *ngIf="_estadoPartida === _MaquinaEstados.NOMBRE"
+              (_empezar)="iniciarRonda()"
+              (_id_i)="guardarJugador(_id_i)"
+            ></app-nombre>
+            <app-pregunta *ngIf="_estadoPartida === _MaquinaEstados.RESPONDIENDO"></app-pregunta>
+            <app-comprobacion *ngIf="_estadoPartida === _MaquinaEstados.COMPROBANDO"></app-comprobacion>
+            <app-nueva-pregunta *ngIf="_estadoPartida === _MaquinaEstados.NUEVA"></app-nueva-pregunta>
+
+          </ion-grid>
+        </div>
 
       </ion-col>
     </ion-row>

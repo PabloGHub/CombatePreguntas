@@ -44,10 +44,14 @@ export class PartidaComponent  implements OnInit
   constructor() { }
   ngOnInit()
   {
+    this.iniciarBucle();
+    this.Update();
     console.log("Iniciando Partida");
   }
 
   // ****** Declaraciones ***** //
+  _Jugador_i: number = 0;
+  _bocadillo_s: string = "";
   _numPregunta_i: number = 0;
   _tiempo_i: number = 15;
   _vida_i: number = 100;
@@ -63,11 +67,14 @@ export class PartidaComponent  implements OnInit
 
   // variables de intervalo
   _intervaloID: any;
+  _intervaloBucle: any;
 
 
   // ****** Funciones ***** //
   iniciarRonda()
   {
+    this._estadoPartida = _MaquinaEstados.RESPONDIENDO;
+
     this._numPregunta_i = this.generarRandom(0, this._preguntas.length);
     console.log("Num pregunta: " + this._numPregunta_i);
 
@@ -88,9 +95,30 @@ export class PartidaComponent  implements OnInit
     ) + _min_i;
   }
 
+  Update()
+  {
+      if (this._estadoPartida == _MaquinaEstados.NOMBRE)
+      {
+        this._bocadillo_s = "Introduce tu nombre que los demás jugadores van a ver";
+      }
+      else if (this._estadoPartida == _MaquinaEstados.RESPONDIENDO)
+      {
+
+      }
+      else if (this._estadoPartida == _MaquinaEstados.COMPROBANDO)
+      {
+
+      }
+      else if (this._estadoPartida == _MaquinaEstados.NUEVA)
+      {
+
+      }
+  }
+
   responderPregunta(_respuesta_i: number)
   {
     clearInterval(this._intervaloID);
+    this._estadoPartida = _MaquinaEstados.COMPROBANDO;
 
     if (_respuesta_i == -1)
     {
@@ -115,9 +143,11 @@ export class PartidaComponent  implements OnInit
 
     if (this._vida_i > 100)
       this._vida_i = 100;
+  }
 
-
-    this.iniciarRonda();
+  guardarJugador(_id:number)
+  {
+    this._Jugador_i = _id;
   }
 
   iniciarRelog()
@@ -131,6 +161,14 @@ export class PartidaComponent  implements OnInit
         this.responderPregunta(-1);
 
     }, 1000);
+  }
+
+  iniciarBucle()
+  {
+    this._intervaloBucle = setInterval(() =>
+    {
+      this.Update();
+    }, 500); // medio segundo.
   }
 
   //

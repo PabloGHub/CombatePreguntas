@@ -1,3 +1,21 @@
-<p>
-  nombre works!
-</p>
+<ion-row class="d-flex ion-justify-content-center my-3">
+  <ion-col size="3">
+
+    <ion-input type="text" placeholder="Nombre:" class="input" [(ngModel)]="_nombre"></ion-input>
+
+  </ion-col>
+  <ion-col size="3">
+
+    <ion-button class="w-100 text-white" (click)="empezar()"><b>Empezar</b></ion-button>
+
+  </ion-col>
+</ion-row>
+
+
+<style>
+  .input
+  {
+    background: var(--color6);
+    border-radius: 5px;
+  }
+</style>
