@@ -12,7 +12,7 @@
       <ion-row class="d-flex ion-justify-content-center">
         <ion-col size="6">
           <br>
-          <ion-button class="w-100 text-white m-1 p-1 h1"><b>Empezar Juego</b></ion-button>
+          <ion-button class="w-100 text-white m-1 p-1 h1" routerLink="/partida"><b>Empezar Juego</b></ion-button>
         </ion-col>
       </ion-row>
 
@@ -54,17 +54,21 @@
           </div>
         </ion-col>
 
-        <!-- Centro -->
-        <ion-col size="6" class="d-flex justify-content-center">
-          <h2>Usuarios Que Participaron:</h2>
-          <hr>
 
-          <app-usuario *ngFor="let usuario of _jugadores?.jugadores"
-                       [_nombre_s]="usuario.nombre"
-                       [_cantidad_i]="usuario.respuestasCorrectas"
+        <!-- Centro -->
+        <ion-col size="6">
+
+          <div class="d-flex justify-content-center">
+            <h2>Usuarios Que Participaron:</h2>
+          </div>
+
+          <app-usuario *ngFor="let usuario of _jugadores?._jugadores"
+                       [_nombre_s]="usuario._nombre"
+                       [_cantidad_i]="usuario._respuestasCorrectas"
           ></app-usuario>
 
         </ion-col>
+
 
         <!-- Derecha -->
         <ion-col size="3" class="d-flex justify-content-center">
