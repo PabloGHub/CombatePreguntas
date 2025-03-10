@@ -1,84 +1,84 @@
 export class DTOcrearPregunta
 {
-  private _idJugador: number;
-  private _pregunta: string;
-  private _respuesta: string;
-  private _fallo1: string;
-  private _fallo2: string;
-  private _fallo3: string;
+  private _idJugador_i: number;
+  private _pregunta_s: string;
+  private _respuesta_s: string;
+  private _fallo1_s: string;
+  private _fallo2_s: string;
+  private _fallo3_s: string;
 
   constructor(idJugador: number, pregunta: string, respuesta: string, fallo1: string, fallo2: string, fallo3: string)
   {
-    this._idJugador = idJugador;
-    this._pregunta = pregunta;
-    this._respuesta = respuesta;
-    this._fallo1 = fallo1;
-    this._fallo2 = fallo2;
-    this._fallo3 = fallo3;
+    this._idJugador_i = idJugador;
+    this._pregunta_s = pregunta;
+    this._respuesta_s = respuesta;
+    this._fallo1_s = fallo1;
+    this._fallo2_s = fallo2;
+    this._fallo3_s = fallo3;
   }
 
-  public get idJugador(): number
+  public get _idJugador(): number
   {
-    return this._idJugador;
+    return this._idJugador_i;
   }
 
-  public set idJugador(value: number)
+  public set _idJugador(value: number)
   {
-    this._idJugador = value;
+    this._idJugador_i = value;
   }
 
-  public get pregunta(): string
+  public get _pregunta(): string
   {
-    return this._pregunta;
+    return this._pregunta_s;
   }
 
-  public set pregunta(value: string)
+  public set _pregunta(value: string)
   {
-    this._pregunta = value;
+    this._pregunta_s = value;
   }
 
-  public get respuesta(): string
+  public get _respuesta(): string
   {
-    return this._respuesta;
+    return this._respuesta_s;
   }
 
-  public set respuesta(value: string)
+  public set _respuesta(value: string)
   {
-    this._respuesta = value;
+    this._respuesta_s = value;
   }
 
-  public get fallo1(): string
+  public get _fallo1(): string
   {
-    return this._fallo1;
+    return this._fallo1_s;
   }
 
-  public set fallo1(value: string)
+  public set _fallo1(value: string)
   {
-    this._fallo1 = value;
+    this._fallo1_s = value;
   }
 
-  public get fallo2(): string
+  public get _fallo2(): string
   {
-    return this._fallo2;
+    return this._fallo2_s;
   }
 
-  public set fallo2(value: string)
+  public set _fallo2(value: string)
   {
-    this._fallo2 = value;
+    this._fallo2_s = value;
   }
 
-  public get fallo3(): string
+  public get _fallo3(): string
   {
-    return this._fallo3;
+    return this._fallo3_s;
   }
 
-  public set fallo3(value: string)
+  public set _fallo3(value: string)
   {
-    this._fallo3 = value;
+    this._fallo3_s = value;
   }
 
   public toString(): string
   {
-    return `DTOcrearPregunta { idJugador: ${this._idJugador}, pregunta: ${this._pregunta}, respuesta: ${this._respuesta}, fallo1: ${this._fallo1}, fallo2: ${this._fallo2}, fallo3: ${this._fallo3} }`;
+    return `DTOcrearPregunta { idJugador: ${this._idJugador_i}, pregunta: ${this._pregunta_s}, respuesta: ${this._respuesta_s}, fallo1: ${this._fallo1_s}, fallo2: ${this._fallo2_s}, fallo3: ${this._fallo3_s} }`;
   }
 }

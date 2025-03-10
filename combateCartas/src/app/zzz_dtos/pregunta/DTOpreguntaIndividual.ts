@@ -2,61 +2,61 @@ import { DTOrespuestaIndividual } from './DTOrespuestaIndividual';
 
 export class DTOpreguntaIndividual
 {
-  private _idPregunta: number;
-  private _idJugador: number;
-  private _pregunta: string;
-  private _respuestas: DTOrespuestaIndividual[];
+  private _idPregunta_i: number;
+  private _idJugador_i: number;
+  private _pregunta_s: string;
+  private _respuestas_dto: DTOrespuestaIndividual[];
 
   constructor(idPregunta: number, idJugador: number, pregunta: string, respuestas: DTOrespuestaIndividual[])
   {
-    this._idPregunta = idPregunta;
-    this._idJugador = idJugador;
-    this._pregunta = pregunta;
-    this._respuestas = respuestas;
+    this._idPregunta_i = idPregunta;
+    this._idJugador_i = idJugador;
+    this._pregunta_s = pregunta;
+    this._respuestas_dto = respuestas;
   }
 
-  public get idPregunta(): number
+  public get _idPregunta(): number
   {
-    return this._idPregunta;
+    return this._idPregunta_i;
   }
 
-  public set idPregunta(value: number)
+  public set _idPregunta(value: number)
   {
-    this._idPregunta = value;
+    this._idPregunta_i = value;
   }
 
-  public get idJugador(): number
+  public get _idJugador(): number
   {
-    return this._idJugador;
+    return this._idJugador_i;
   }
 
-  public set idJugador(value: number)
+  public set _idJugador(value: number)
   {
-    this._idJugador = value;
+    this._idJugador_i = value;
   }
 
-  public get pregunta(): string
+  public get _pregunta(): string
   {
-    return this._pregunta;
+    return this._pregunta_s;
   }
 
-  public set pregunta(value: string)
+  public set _pregunta(value: string)
   {
-    this._pregunta = value;
+    this._pregunta_s = value;
   }
 
-  public get respuestas(): DTOrespuestaIndividual[]
+  public get _respuestas(): DTOrespuestaIndividual[]
   {
-    return this._respuestas;
+    return this._respuestas_dto;
   }
 
-  public set respuestas(value: DTOrespuestaIndividual[])
+  public set _respuestas(value: DTOrespuestaIndividual[])
   {
-    this._respuestas = value;
+    this._respuestas_dto = value;
   }
 
   public toString(): string
   {
-    return `DTOpreguntaIndividual { idPregunta: ${this._idPregunta}, idJugador: ${this._idJugador}, pregunta: ${this._pregunta}, respuestas: ${this._respuestas.map(r => r.toString()).join(', ')} }`;
+    return `DTOpreguntaIndividual { idPregunta: ${this._idPregunta_i}, idJugador: ${this._idJugador_i}, pregunta: ${this._pregunta_s}, respuestas: ${this._respuestas_dto.map(r => r.toString()).join(', ')} }`;
   }
 }

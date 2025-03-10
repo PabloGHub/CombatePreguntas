@@ -28,6 +28,7 @@ export class HomePage implements OnInit
       (data: DTOlistarJugadores) =>
       {
         this._jugadores = data;
+        console.log(this._jugadores._jugadores[0]._nombre);
       },
       error =>
       {

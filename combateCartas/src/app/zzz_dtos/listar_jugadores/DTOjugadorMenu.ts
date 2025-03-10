@@ -1,36 +1,36 @@
 export class DTOjugadorMenu
 {
-  private _nombre: string;
-  private _respuestasCorrectas: number;
+  private _nombre_s: string;
+  private _respuestasCorrectas_i: number;
 
   constructor(nombre: string, respuestasCorrectas: number)
   {
-    this._nombre = nombre;
-    this._respuestasCorrectas = respuestasCorrectas;
+    this._nombre_s = nombre;
+    this._respuestasCorrectas_i = respuestasCorrectas;
   }
 
-  public get nombre(): string
+  public get _nombre(): string
   {
-    return this._nombre;
+    return this._nombre_s;
   }
 
-  public set nombre(value: string)
+  public set _nombre(value: string)
   {
-    this._nombre = value;
+    this._nombre_s = value;
   }
 
-  public get respuestasCorrectas(): number
+  public get _respuestasCorrectas(): number
   {
-    return this._respuestasCorrectas;
+    return this._respuestasCorrectas_i;
   }
 
-  public set respuestasCorrectas(value: number)
+  public set _respuestasCorrectas(value: number)
   {
-    this._respuestasCorrectas = value;
+    this._respuestasCorrectas_i = value;
   }
 
   public toString(): string
   {
-    return `DTOjugadorMenu { nombre: ${this._nombre}, respuestasCorrectas: ${this._respuestasCorrectas} }`;
+    return `DTOjugadorMenu { nombre: ${this._nombre_s}, respuestasCorrectas: ${this._respuestasCorrectas_i} }`;
   }
 }

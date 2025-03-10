@@ -1,48 +1,48 @@
 export class DTOresponder
 {
-  private _idJugador: number;
-  private _idPregunta: number;
-  private _respuesta: boolean; // false = respuesta incorrecta, true = respuesta correcta.
+  private _idJugador_i: number;
+  private _idPregunta_i: number;
+  private _respuesta_b: boolean; // false = respuesta incorrecta, true = respuesta correcta.
 
   constructor(idJugador: number, idPregunta: number, respuesta: boolean)
   {
-    this._idJugador = idJugador;
-    this._idPregunta = idPregunta;
-    this._respuesta = respuesta;
+    this._idJugador_i = idJugador;
+    this._idPregunta_i = idPregunta;
+    this._respuesta_b = respuesta;
   }
 
-  public get idJugador(): number
+  public get _idJugador(): number
   {
-    return this._idJugador;
+    return this._idJugador_i;
   }
 
-  public set idJugador(value: number)
+  public set _idJugador(value: number)
   {
-    this._idJugador = value;
+    this._idJugador_i = value;
   }
 
-  public get idPregunta(): number
+  public get _idPregunta(): number
   {
-    return this._idPregunta;
+    return this._idPregunta_i;
   }
 
-  public set idPregunta(value: number)
+  public set _idPregunta(value: number)
   {
-    this._idPregunta = value;
+    this._idPregunta_i = value;
   }
 
-  public get respuesta(): boolean
+  public get _respuesta(): boolean
   {
-    return this._respuesta;
+    return this._respuesta_b;
   }
 
-  public set respuesta(value: boolean)
+  public set _respuesta(value: boolean)
   {
-    this._respuesta = value;
+    this._respuesta_b = value;
   }
 
   public toString(): string
   {
-    return `DTOresponder { idJugador: ${this._idJugador}, idPregunta: ${this._idPregunta}, respuesta: ${this._respuesta} }`;
+    return `DTOresponder { idJugador: ${this._idJugador_i}, idPregunta: ${this._idPregunta_i}, respuesta: ${this._respuesta_b} }`;
   }
 }

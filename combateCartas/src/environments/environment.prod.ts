@@ -1,4 +1,4 @@
 export const environment = {
-  apiUrl : 'http://sui.casacam.net:8080',
+  apiUrl : '/api',
   production: true
 };

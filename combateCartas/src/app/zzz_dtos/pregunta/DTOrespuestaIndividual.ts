@@ -1,36 +1,36 @@
 export class DTOrespuestaIndividual
 {
-  private _respuesta: string;
-  private _correcta: boolean;
+  private _respuesta_s: string;
+  private _correcta_b: boolean;
 
   constructor(respuesta: string, correcta: boolean)
   {
-    this._respuesta = respuesta;
-    this._correcta = correcta;
+    this._respuesta_s = respuesta;
+    this._correcta_b = correcta;
   }
 
-  public get respuesta(): string
+  public get _respuesta(): string
   {
-    return this._respuesta;
+    return this._respuesta_s;
   }
 
-  public set respuesta(value: string)
+  public set _respuesta(value: string)
   {
-    this._respuesta = value;
+    this._respuesta_s = value;
   }
 
-  public get correcta(): boolean
+  public get _correcta(): boolean
   {
-    return this._correcta;
+    return this._correcta_b;
   }
 
-  public set correcta(value: boolean)
+  public set _correcta(value: boolean)
   {
-    this._correcta = value;
+    this._correcta_b = value;
   }
 
   public toString(): string
   {
-    return `DTOrespuestaIndividual { respuesta: ${this._respuesta}, correcta: ${this._correcta} }`;
+    return `DTOrespuestaIndividual { respuesta: ${this._respuesta_s}, correcta: ${this._correcta_b} }`;
   }
 }
