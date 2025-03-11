@@ -1,6 +1,8 @@
 FROM node:18-alpine
 LABEL authors="SUI"
 
+RUN ng build --configuration development
+
 WORKDIR /app
 COPY ./www /app
 
