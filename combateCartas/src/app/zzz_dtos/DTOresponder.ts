@@ -4,11 +4,11 @@ export class DTOresponder
   private _idPregunta_i: number;
   private _respuesta_b: boolean; // false = respuesta incorrecta, true = respuesta correcta.
 
-  constructor(idJugador: number, idPregunta: number, respuesta: boolean)
+  constructor(_idJugador: number, _idPregunta: number, _respuesta: boolean)
   {
-    this._idJugador_i = idJugador;
-    this._idPregunta_i = idPregunta;
-    this._respuesta_b = respuesta;
+    this._idJugador_i = _idJugador;
+    this._idPregunta_i = _idPregunta;
+    this._respuesta_b = _respuesta;
   }
 
   public get _idJugador(): number
@@ -39,6 +39,14 @@ export class DTOresponder
   public set _respuesta(value: boolean)
   {
     this._respuesta_b = value;
+  }
+
+  public toJSON(): object{
+    return {
+      _idJugador: this._idJugador_i,
+      _idPregunta: this._idPregunta_i,
+      _respuesta: this._respuesta_b
+    };
   }
 
   public toString(): string

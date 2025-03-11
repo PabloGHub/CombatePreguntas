@@ -25,18 +25,18 @@ export class HomePage implements OnInit
   ngOnInit()
   {
     this._SerJugador.listarJugadores().subscribe
-    (
-      (data: DTOlistarJugadores) =>
+    ({
+      next: (data: DTOlistarJugadores) =>
       {
         this._jugadores = data;
         this._jugadores._jugadores.sort((a, b) => b._respuestasCorrectas - a._respuestasCorrectas);
         console.log(this._jugadores._jugadores[0]._nombre);
       },
-      error =>
+      error: (error) =>
       {
         console.error('Web:(Home:ngOnInit):', error);
       }
-    )
+    });
   }
 
   // --- Variables --- //

@@ -13,7 +13,7 @@ export class SerResponderService
 
   responder(_respuesta: DTOresponder)
   {
-    this._http.post(`${environment.apiUrl}/responder`, _respuesta)
+    return this._http.post<any>(`${environment.apiUrl}/responder`, _respuesta)
       .pipe
       (
         catchError(error =>

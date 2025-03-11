@@ -11,9 +11,9 @@ export class SerJugadorService
 {
   constructor(private _http: HttpClient) { }
 
-  crearJugador(_nombre_s: string)
+  crearJugador(_nombre_s: string): Observable<number>
   {
-    this._http.post<string>(`${environment.apiUrl}/juga/crear?_nombre=${_nombre_s}`, null)
+    return this._http.post<number>(`${environment.apiUrl}/juga/crear?_nombre=${_nombre_s}`, null)
       .pipe
       (
         catchError(error =>

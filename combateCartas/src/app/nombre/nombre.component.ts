@@ -1,6 +1,7 @@
 import {Component, EventEmitter, Output} from '@angular/core';
 import {IonButton, IonCol, IonInput, IonItem, IonLabel, IonRow} from "@ionic/angular/standalone";
 import {FormsModule} from "@angular/forms";
+import {SerJugadorService} from "../zzz_servicios/ser-jugador.service";
 
 @Component({
   selector: 'app-nombre',
@@ -16,19 +17,36 @@ import {FormsModule} from "@angular/forms";
 })
 export class NombreComponent
 {
-  constructor() { }
+  constructor(private _serJugador: SerJugadorService) { }
 
   @Output() _empezar = new EventEmitter<void>();
   @Output() _id_i = new EventEmitter<number>();
+  @Output() _nombre_s = new EventEmitter<string>();
   _nombre: string = "";
 
   empezar()
   {
     if (this._nombre == "" || this._nombre == null || this._nombre.trim().length === 0)
       return;
-    // TODO: guardar nombre y devolver id.
 
-    this._empezar.emit();
-    this._id_i.emit(1);
+    let _id: number = 1;
+    this._serJugador.crearJugador(this._nombre).subscribe
+    ({
+      next: (_datos: number)=>
+      {
+        console.log("Usuario: " + _datos);
+        _id = _datos;
+      },
+      error: (_error)=>
+      {
+        console.error('Web:(Nombre:empezar):', _error);
+      },
+      complete: ()=>
+      {
+        this._id_i.emit(_id);
+        this._nombre_s.emit(this._nombre);
+        this._empezar.emit();
+      }
+    });
   }
 }

@@ -3,14 +3,14 @@ import { DTOrespuestaIndividual } from './DTOrespuestaIndividual';
 export class DTOpreguntaIndividual
 {
   private _idPregunta_i: number;
-  private _idJugador_i: number;
+  private _nombreJugador_s: string;
   private _pregunta_s: string;
   private _respuestas_dto: DTOrespuestaIndividual[];
 
-  constructor(idPregunta: number, idJugador: number, pregunta: string, respuestas: DTOrespuestaIndividual[])
+  constructor(idPregunta: number, nombreJugador: string, pregunta: string, respuestas: DTOrespuestaIndividual[])
   {
     this._idPregunta_i = idPregunta;
-    this._idJugador_i = idJugador;
+    this._nombreJugador_s = nombreJugador;
     this._pregunta_s = pregunta;
     this._respuestas_dto = respuestas;
   }
@@ -25,14 +25,14 @@ export class DTOpreguntaIndividual
     this._idPregunta_i = value;
   }
 
-  public get _idJugador(): number
+  public get _nombreJugador(): string
   {
-    return this._idJugador_i;
+    return this._nombreJugador_s;
   }
 
-  public set _idJugador(value: number)
+  public set _nombreJugador(value: string)
   {
-    this._idJugador_i = value;
+    this._nombreJugador_s = value;
   }
 
   public get _pregunta(): string
@@ -57,6 +57,6 @@ export class DTOpreguntaIndividual
 
   public toString(): string
   {
-    return `DTOpreguntaIndividual { idPregunta: ${this._idPregunta_i}, idJugador: ${this._idJugador_i}, pregunta: ${this._pregunta_s}, respuestas: ${this._respuestas_dto.map(r => r.toString()).join(', ')} }`;
+    return `DTOpreguntaIndividual { idPregunta: ${this._idPregunta_i}, idJugador: ${this._nombreJugador_s}, pregunta: ${this._pregunta_s}, respuestas: ${this._respuestas_dto.map(r => r.toString()).join(', ')} }`;
   }
 }

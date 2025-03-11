@@ -15,7 +15,7 @@ export class UsuarioComponent  implements OnInit
       this._comentario_s = "¡Felicidades! as roto las leyes de la física";
 
     else if (this._cantidad_i == 4)
-      this._comentario_s = "Ni una... !NI UNA¡";
+      this._comentario_s = "Ni una... ¡¡NI UNA!!";
 
     else if (this._cantidad_i == 5)
       this._comentario_s = "Esto no es lo tuyo";

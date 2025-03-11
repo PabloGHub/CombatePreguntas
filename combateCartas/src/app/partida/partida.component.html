@@ -57,11 +57,12 @@
                           class="h-100"
                           (_empezar)="iniciarRonda()"
                           (_id_i)="_Jugador_i = $event"
+                          (_nombre_s)="_nombre_s = $event"
             ></app-nombre>
             <app-pregunta *ngIf="_estadoPartida === _MaquinaEstados.RESPONDIENDO"
                           class="align-items-center"
-                          [_nombre_s]="'Ninguno'"
-                          [_cantidad_i]="-1"
+                          [_nombre_s]="_nombre_s"
+                          [_cantidad_i]="_aciertos_i"
                           [_tiempo_i]="_tiempo_i"
                           [_maxTiempo_i]="_maxTiempo_i"
                           [_vida_i]="_vida_i"
@@ -74,14 +75,15 @@
             ></app-pregunta>
             <app-comprobacion *ngIf="_estadoPartida === _MaquinaEstados.COMPROBANDO"
                               class="align-items-center"
-                              [_nombre_s]="'Ninguno'"
-                              [_cantidad_i]="-1"
+                              [_nombre_s]="_nombre_s"
+                              [_cantidad_i]="_aciertos_i"
                               [_vida_i]="_vida_i"
                               [_tiempo_i]="_tiempo_i"
                               [_acertado_b]="_acertado_b"
                               (_continuar)="iniciarRonda()"
             ></app-comprobacion>
-            <app-nueva-pregunta *ngIf="_estadoPartida === _MaquinaEstados.NUEVA"></app-nueva-pregunta>
+            <app-nueva-pregunta *ngIf="_estadoPartida === _MaquinaEstados.NUEVA"
+            ></app-nueva-pregunta>
 
           </ion-grid>
         </div>
