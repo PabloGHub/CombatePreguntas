@@ -25,9 +25,9 @@ export class SerPreguntasService
       );
   }
 
-  crearPregunta(_pregunta: DTOcrearPregunta): void
+  crearPregunta(_pregunta: DTOcrearPregunta)
   {
-    this._http.post(`${environment.apiUrl}/pre/crear`, null)
+    return this._http.post<any>(`${environment.apiUrl}/pre/crear`, _pregunta)
       .pipe
       (
         catchError(error =>

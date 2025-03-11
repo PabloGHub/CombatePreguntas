@@ -17,6 +17,7 @@ export class DTOcrearPregunta
     this._fallo3_s = fallo3;
   }
 
+
   public get _idJugador(): number
   {
     return this._idJugador_i;
@@ -75,6 +76,17 @@ export class DTOcrearPregunta
   public set _fallo3(value: string)
   {
     this._fallo3_s = value;
+  }
+
+  public toJSON(): object{
+    return {
+      _idJugador: this._idJugador_i,
+      _pregunta: this._pregunta_s,
+      _respuesta: this._respuesta_s,
+      _fallo1: this._fallo1_s,
+      _fallo2: this._fallo2_s,
+      _fallo3: this._fallo3_s
+    };
   }
 
   public toString(): string

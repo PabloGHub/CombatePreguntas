@@ -83,6 +83,7 @@
                               (_continuar)="iniciarRonda()"
             ></app-comprobacion>
             <app-nueva-pregunta *ngIf="_estadoPartida === _MaquinaEstados.NUEVA"
+                                [_jugador_i]="_Jugador_i"
             ></app-nueva-pregunta>
 
           </ion-grid>

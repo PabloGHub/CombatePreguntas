@@ -112,6 +112,8 @@ export class PartidaComponent  implements OnInit
     {
       this._rondaIniciandose_b = true;
 
+      console.log("Iniciando Ronda");
+
       if (this._vida_i <= 0)
       {
         this._vida_i = 0;

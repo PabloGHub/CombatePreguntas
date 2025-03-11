@@ -2,6 +2,7 @@ import {Component, EventEmitter, Output} from '@angular/core';
 import {IonButton, IonCol, IonInput, IonItem, IonLabel, IonRow} from "@ionic/angular/standalone";
 import {FormsModule} from "@angular/forms";
 import {SerJugadorService} from "../zzz_servicios/ser-jugador.service";
+import {NgIf} from "@angular/common";
 
 @Component({
   selector: 'app-nombre',
@@ -12,7 +13,8 @@ import {SerJugadorService} from "../zzz_servicios/ser-jugador.service";
     IonCol,
     IonInput,
     IonButton,
-    FormsModule
+    FormsModule,
+    NgIf
   ]
 })
 export class NombreComponent
@@ -24,10 +26,15 @@ export class NombreComponent
   @Output() _nombre_s = new EventEmitter<string>();
   _nombre: string = "";
 
+  _errores: string = "";
+
   empezar()
   {
     if (this._nombre == "" || this._nombre == null || this._nombre.trim().length === 0)
+    {
+      this._errores = `Error, No puedes dejarlo vacío, ni contener "<" o ">"`;
       return;
+    }
 
     let _id: number = 1;
     this._serJugador.crearJugador(this._nombre).subscribe
@@ -40,6 +47,7 @@ export class NombreComponent
       error: (_error)=>
       {
         console.error('Web:(Nombre:empezar):', _error);
+        this._errores = `Error, No puedes dejarlo vacío, ni contener "<" o ">"`;
       },
       complete: ()=>
       {

@@ -19,6 +19,12 @@
 </ion-row>
 
 
+<ion-row *ngIf="_errores !== null" class="d-flex justify-content-center">
+  <ion-col size="8" class="d-flex justify-content-center">
+    <h3 class="text-danger">{{ _errores }}</h3>
+  </ion-col>
+</ion-row>
+
 <style>
   .input
   {
