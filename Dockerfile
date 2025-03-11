@@ -4,7 +4,7 @@ FROM node:18 as build
 
 WORKDIR /app
 
-# RUN npm install -g @angular/cli
+#RUN npm install -g @angular/cli
 # ng build --configuration development
 COPY package*.json ./
 RUN npm install
