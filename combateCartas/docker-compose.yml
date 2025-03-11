@@ -1,0 +1,10 @@
+version: '3'
+services:
+  frontend:
+    build: .
+    ports:
+      - "80:80"
+  backend:
+    image: combate_controlador
+    ports:
+      - "8080:8080"
