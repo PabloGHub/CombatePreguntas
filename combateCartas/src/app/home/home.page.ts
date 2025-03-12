@@ -43,4 +43,4 @@ export class HomePage implements OnInit
   _jugadores: DTOlistarJugadores | undefined;
 }
 
-// LuisPuto matenme
+// LuisPuto matenme ñe ñe
