@@ -1,4 +1,4 @@
-FROM node:22-alpine
+FROM node:18-alpine
 LABEL authors="SUI"
 
 WORKDIR /app
@@ -15,13 +15,7 @@ COPY . .
 
 COPY ./www /app
 
-# RUN npm install -g http-server || \
-#     (sleep 5 && npm install -g http-server) || \
-#     (sleep 5 && npm install -g http-server) || \
-#     (sleep 5 && npm install -g http-server) || \
-#     (sleep 5 && npm install -g http-server)
-
-# ª
+RUN npm install -g http-server
 
 EXPOSE 4200
 
