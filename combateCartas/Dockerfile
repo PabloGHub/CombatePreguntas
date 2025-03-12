@@ -4,11 +4,10 @@ LABEL authors="SUI"
 WORKDIR /app
 
 COPY package*.json ./
-RUN npm install
+# RUN npm install
 
 COPY . .
 
-# RUN npm install # Esta mas que instalado.
 # RUN npm install -g @angular/cli
 RUN ng build --configuration development
 # RUN ls -la /app # No lo muestra.
