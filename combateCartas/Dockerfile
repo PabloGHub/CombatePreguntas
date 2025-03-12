@@ -9,6 +9,7 @@ RUN npm install
 COPY . .
 
 RUN npm install
+RUN npm install -g @angular/cli
 RUN ng build --configuration development
 # RUN ls -la /app # No lo muestra.
 
