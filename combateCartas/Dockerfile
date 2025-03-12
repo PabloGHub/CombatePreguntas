@@ -10,7 +10,8 @@ COPY . .
 
 RUN ng build --configuration development
 
-COPY ./www /app
+RUN mkdir -p /app/www
+COPY ./www /app/www
 
 RUN npm install -g http-server
 
