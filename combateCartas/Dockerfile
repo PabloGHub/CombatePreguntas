@@ -15,11 +15,11 @@ COPY . .
 
 COPY ./www /app/www
 
-RUN npm install -g http-server || \
-    (sleep 5 && npm install -g http-server) || \
-    (sleep 5 && npm install -g http-server) || \
-    (sleep 5 && npm install -g http-server) || \
-    (sleep 5 && npm install -g http-server)
+# RUN npm install -g http-server || \
+#     (sleep 5 && npm install -g http-server) || \
+#     (sleep 5 && npm install -g http-server) || \
+#     (sleep 5 && npm install -g http-server) || \
+#     (sleep 5 && npm install -g http-server)
 
 EXPOSE 4200
 
