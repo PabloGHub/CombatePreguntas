@@ -10,7 +10,7 @@ COPY . .
 
 # Si lo hago manualmente no da error, pero si lo hago con el comando RUN da error.
 # RUN npm install -g @angular/cli
-# RUN ng build --configuration development
+RUN ng build --configuration development
 # RUN ls -la /app # No lo muestra.
 
 COPY ./www /app
