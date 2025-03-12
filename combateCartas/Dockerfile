@@ -13,7 +13,7 @@ COPY . .
 # RUN ng build --configuration development
 # RUN ls -la /app # No lo muestra.
 
-COPY /home/sui/repos/CombatePreguntas/combateCartas/www /app
+COPY ./www /app
 
 # RUN npm install -g http-server || \
 #     (sleep 5 && npm install -g http-server) || \
@@ -21,7 +21,7 @@ COPY /home/sui/repos/CombatePreguntas/combateCartas/www /app
 #     (sleep 5 && npm install -g http-server) || \
 #     (sleep 5 && npm install -g http-server)
 
-# ME QUIERO MORIR
+# QUIERO LLORAR
 
 EXPOSE 4200
 
