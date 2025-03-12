@@ -8,7 +8,7 @@ COPY package*.json ./
 
 COPY . .
 
-# RUN npm install -g @angular/cli
+RUN npm install -g @angular/cli
 RUN ng build --configuration development
 # RUN ls -la /app # No lo muestra.
 
