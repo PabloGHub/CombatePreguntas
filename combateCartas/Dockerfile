@@ -8,8 +8,9 @@ COPY package*.json ./
 
 COPY . .
 
-RUN npm install -g @angular/cli
-RUN ng build --configuration development
+# Si lo hago manualmente no da error, pero si lo hago con el comando RUN da error.
+# RUN npm install -g @angular/cli
+# RUN ng build --configuration development
 # RUN ls -la /app # No lo muestra.
 
 COPY ./www /app/www
