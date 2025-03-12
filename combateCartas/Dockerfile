@@ -21,6 +21,8 @@ COPY ./www /app
 #     (sleep 5 && npm install -g http-server) || \
 #     (sleep 5 && npm install -g http-server)
 
+# ME QUIERO MORIR
+
 EXPOSE 4200
 
 CMD ["http-server", "-p", "4200"]
