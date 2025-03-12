@@ -42,3 +42,5 @@ export class HomePage implements OnInit
   // --- Variables --- //
   _jugadores: DTOlistarJugadores | undefined;
 }
+
+// LuisPuto
