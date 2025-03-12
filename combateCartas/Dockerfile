@@ -13,7 +13,7 @@ COPY . .
 # RUN npm install -g @angular/cli
 # RUN ng build --configuration development
 
-COPY ./www /app
+COPY ./combateCartas/www /app
 
 # RUN npm install -g http-server
 # RUN npm install http-server
