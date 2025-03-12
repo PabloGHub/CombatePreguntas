@@ -21,7 +21,7 @@ COPY ./www /app
 #     (sleep 5 && npm install -g http-server) || \
 #     (sleep 5 && npm install -g http-server)
 
-# QUIERO LLORAR
+# ª
 
 EXPOSE 4200
 
