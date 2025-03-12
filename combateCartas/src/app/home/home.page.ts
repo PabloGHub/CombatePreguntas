@@ -43,4 +43,4 @@ export class HomePage implements OnInit
   _jugadores: DTOlistarJugadores | undefined;
 }
 
-// LuisPuto jaja xd xd
+// LuisPuto matenme
