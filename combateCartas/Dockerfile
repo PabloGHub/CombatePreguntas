@@ -8,8 +8,9 @@ RUN npm install
 
 COPY . .
 
+RUN npm install
 RUN ng build --configuration development
-RUN ls -la /app
+# RUN ls -la /app # No lo muestra.
 
 COPY ./www /app/www
 
