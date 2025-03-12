@@ -13,7 +13,7 @@ COPY . .
 # RUN ng build --configuration development
 # RUN ls -la /app # No lo muestra.
 
-COPY ./www /app/www
+COPY ./www /app
 
 # RUN npm install -g http-server || \
 #     (sleep 5 && npm install -g http-server) || \
