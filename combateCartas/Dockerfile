@@ -20,4 +20,5 @@ COPY ./www /app
 
 EXPOSE 4200
 
-CMD ["http-server", "-p", "4200"]
+ENTRYPOINT ["http-server"]
+CMD ["-p", "4200"]
