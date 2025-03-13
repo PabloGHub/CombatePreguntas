@@ -21,5 +21,6 @@ COPY ./www /app
 
 EXPOSE 4200
 
-# ENTRYPOINT ["http-server"]
-CMD ["http-server", "-p", "4200"]
+ENV PATH="/usr/local/lib/node_modules/.bin:$PATH"
+ENTRYPOINT ["http-server"]
+CMD ["-p", "4200"]
