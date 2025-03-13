@@ -4,15 +4,15 @@ LABEL authors="SUI"
 WORKDIR /app
 
 COPY package*.json ./
-RUN npm install -g http-server
-# RUN npm install
+#RUN npm install -g http-server
+RUN npm install
 
 COPY . .
 
 
 # Si lo hago manualmente no da error, pero si lo hago con el comando RUN da error.
 # RUN npm install -g @angular/cli
-# RUN ng build --configuration development
+RUN ng build --configuration development
 
 COPY ./www /app
 
@@ -21,6 +21,4 @@ COPY ./www /app
 
 EXPOSE 4200
 
-ENV PATH="/usr/local/lib/node_modules/.bin:$PATH"
-ENTRYPOINT ["http-server"]
-CMD ["-p", "4200"]
+CMD ["ng serve", "-p", "4200"]
