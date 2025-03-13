@@ -9,7 +9,7 @@ COPY package*.json ./
 COPY . .
 
 
-RUN ng build --configuration development
+# RUN ng build --configuration development
 
 COPY ./www /app
 
