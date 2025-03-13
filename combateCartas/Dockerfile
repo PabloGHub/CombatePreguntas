@@ -4,7 +4,7 @@ LABEL authors="SUI"
 WORKDIR /app
 
 COPY package*.json ./
-# RUN npm install
+# RUN npm install # Tengo mieo
 
 COPY . .
 
