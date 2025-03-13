@@ -4,7 +4,7 @@ LABEL authors="SUI"
 WORKDIR /app
 
 COPY package*.json ./
-RUN npm install -g http-server 
+RUN npm install -g http-server
 # RUN npm install
 
 COPY . .
@@ -20,6 +20,8 @@ COPY ./www /app
 # RUN npm install http-server
 
 EXPOSE 4200
+
+ENV PATH="/usr/local/lib/node_modules/.bin:$PATH"
 
 ENTRYPOINT ["http-server"]
 CMD ["-p", "4200"]
